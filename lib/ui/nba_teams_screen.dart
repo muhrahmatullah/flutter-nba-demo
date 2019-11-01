@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nbateam/ui/nba_teams_body.dart';
-import 'package:nbateam/widgets/gradient_appbar.dart';
+import 'package:nbateam/model/teams.dart';
+import 'package:nbateam/ui/nba_card.dart';
 
 class NbaTeamsScreen extends StatefulWidget {
   NbaTeamsScreen({Key key, this.title}) : super(key: key);
@@ -12,16 +12,22 @@ class NbaTeamsScreen extends StatefulWidget {
 }
 
 class _NbaTeamsScreenState extends State<NbaTeamsScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          GradientAppBar(widget.title),
-          NbaTeamBody(),
-        ],
+      appBar: AppBar(
+        title: Text(
+          'NBA',
+        ),
       ),
+          body: ListView.builder(itemBuilder: (context, index) => Text(teams[index].name), itemCount: teams.length,)
+//      body: Container(
+//        color: Color(0xffdfbb85),
+//        child: ListView.builder(
+//          itemBuilder: (context, index) => NbaCard(teams[index]),
+//          itemCount: teams.length,
+//        ),
+//      ),
     );
   }
 }
