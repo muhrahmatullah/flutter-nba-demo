@@ -17,12 +17,13 @@ class NbaCard extends StatelessWidget {
               border: new Border(
                   right: new BorderSide(width: 1.0, color: Colors.grey))),
           child: Hero(
-              tag: nbaTeam.image,
-              child: Image.network(
-                nbaTeam.image,
-                height: 68,
-                width: 68,
-              )),
+            tag: nbaTeam.image,
+            child: Image.network(
+              nbaTeam.image,
+              height: 68,
+              width: 68,
+            ),
+          ),
         ),
         title: Text(
           nbaTeam.name,
