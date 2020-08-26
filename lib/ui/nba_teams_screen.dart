@@ -20,11 +20,10 @@ class _NbaTeamsScreenState extends State<NbaTeamsScreen> {
           'NBA',
         ),
       ),
-//          body: ListView.builder(itemBuilder: (context, index) => Text(teams[index].name), itemCount: teams.length,)
       body: Container(
         color: Color(0xffdfbb85),
         child: ListView.builder(
-          itemBuilder: (context, index) => NbaCard(teams[index]),
+          itemBuilder: (context, index) => Text(teams[index].name),
           itemCount: teams.length,
         ),
       ),
